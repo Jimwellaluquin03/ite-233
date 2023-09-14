@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Image and Video Gallery</title>
+</head>
+<body>
+    <header>
+        <h1>Image and Video Gallery</h1>
+    </header>
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="categories.html">Categories</a>
+    </nav>
+    <div class="container">
+        <div class="gallery">
+            <div class="item">
+                <img src="5.jfif" alt="Image 1">
+                <button onclick="changeContent(0, '3.jfif', 'Arthur Nery - Happy w u (Lyrics) ft. Jason Dhakal.mp4')">View Image 1</button>
+            </div>
+            <div class="item">
+                <img src="3.jfif" alt="Image 2">
+                <button onclick="changeContent(1, '5.jfif', 'Arthur Nery - Happy w u (Lyrics) ft. Jason Dhakal.mp4')">View Image 2</button>
+            </div>
+            <div class="item">
+                <img src="5.jfif" alt="Image 3">
+                <button onclick="changeContent(2, '3.jfif', 'Arthur Nery - Happy w u (Lyrics) ft. Jason Dhakal.mp4')">View Image 3</button>
+            </div>
+            <div class="item">
+                <video id="video1" src="Arthur Nery - Happy w u (Lyrics) ft. Jason Dhakal.mp4" controls></video>
+                <button onclick="changeVideoSource(0, 'Isa lang - Arthur Nery (Official Lyric Visualizer) (1).mp4')">Change Video</button>
+            </div>
+            <div class="item">
+                <video id="video2" src="Arthur Nery - Happy w u (Lyrics) ft. Jason Dhakal.mp4" controls></video>
+                <button onclick="changeVideoSource(1, 'Isa lang - Arthur Nery (Official Lyric Visualizer) (1).mp4')">Change Video</button>
+            </div>
+            <div class="item">
+                <video id="video3" src="Arthur Nery - Happy w u (Lyrics) ft. Jason Dhakal.mp4" controls></video>
+                <button onclick="changeVideoSource(2, 'Isa lang - Arthur Nery (Official Lyric Visualizer) (1).mp4')">Change Video</button>
+            </div>
+            <script>
+                function changeContent(index, imageSrc, videoSrc) {
+                    // Update the image source
+                    document.querySelectorAll('.item img')[index].src = imageSrc;
+
+                    // Update the video source
+                    document.querySelector('#video' + (index + 1)).src = videoSrc;
+                }
+
+                function changeVideoSource(index, videoSrc) {
+                    // Update the video source
+                    document.querySelector('#video' + (index + 1)).src = videoSrc;
+                }
+            </script>
+        </div>
+    </div>
+</body>
+</html>

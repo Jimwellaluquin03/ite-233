@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Event Handling Example</title>
+  <style>
+    .mydiv {
+      width: 100px;
+      height: 100px;
+      background-color: lightblue;
+      margin: 10px;
+      text-align: center;
+      line-height: 100px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <!-- Event 1: Click -->
+  <div class="mydiv" id="clickDiv">Click Me</div>
+
+  <!-- Event 2: Blur -->
+  <div class="mydiv" id="blurDiv" tabindex="0">Blur Me</div>
+
+  <!-- Event 3: Change -->
+  <input type="text" class="mydiv" id="changeDiv" value="Change Me">
+
+  <!-- Event 4: Double Click -->
+  <div class="mydiv" id="dblClickDiv">Double Click Me</div>
+
+  <!-- Event 5: Focus In/Out -->
+  <div class="mydiv" id="focusInOutDiv" tabindex="0">Focus In/Out</div>
+
+  <!-- Event 6: Mouse Over -->
+  <div class="mydiv" id="mouseOverDiv">Mouse Over Me</div>
+
+  <!-- Event 7: Resize -->
+  <div class="mydiv" id="resizeDiv">Resize Me</div>
+
+  <!-- Event 8: Animation Start/End -->
+  <div class="mydiv" id="animationDiv">Animate Me</div>
+
+  <script>
+    // Event 1: Click
+    document.getElementById("clickDiv").addEventListener("click", function() {
+      alert("Clicked!");
+    });
+
+    // Event 2: Blur
+    document.getElementById("blurDiv").addEventListener("blur", function() {
+      alert("Blurred!");
+    });
+
+    // Event 3: Change
+    document.getElementById("changeDiv").addEventListener("change", function() {
+      alert("Changed!");
+    });
+
+    // Event 4: Double Click
+    document.getElementById("dblClickDiv").addEventListener("dblclick", function() {
+      alert("Double Clicked!");
+    });
+
+    // Event 5: Focus In/Out
+    const focusInOutDiv = document.getElementById("focusInOutDiv");
+    focusInOutDiv.addEventListener("focus", function() {
+      focusInOutDiv.innerText = "Focus In";
+    });
+    focusInOutDiv.addEventListener("blur", function() {
+      focusInOutDiv.innerText = "Focus Out";
+    });
+
+    // Event 6: Mouse Over
+    document.getElementById("mouseOverDiv").addEventListener("mouseover", function() {
+      alert("Mouse Over!");
+    });
+
+    // Event 7: Resize
+    window.addEventListener("resize", function() {
+      alert("Window Resized!");
+    });
+
+    // Event 8: Animation Start/End
+    const animationDiv = document.getElementById("animationDiv");
+    animationDiv.addEventListener("animationstart", function() {
+      alert("Animation Started!");
+    });
+    animationDiv.addEventListener("animationend", function() {
+      alert("Animation Ended!");
+    });
+  </script>
+</body>
+</html>
